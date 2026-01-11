@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import{app} from "../firebase";
+import { useFirebase } from '../Context/ContextApi';
 
 
 function Signup() {
     const[email, setEmail]=useState("");
     const[password, setPassword]= useState("");
+    const firebase = useFirebase();
+    console.log(firebase);
 
     const auth = getAuth(app)
 
